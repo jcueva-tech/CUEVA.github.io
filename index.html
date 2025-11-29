@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gym Fitness Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo-area">
+      <div class="logo-circle">GF</div>
+      <div class="logo-text">
+        <span>GYM FITNESS</span>
+        <span>MANAGEMENT SYSTEM</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#about-section">ABOUT</a>
+      <a href="#classes-section">CLASSES</a>
+      <a href="#membership-section">MEMBERSHIP</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- STEP 1: SLOT + MEMBERSHIP -->
+    <section id="step-1" class="screen active">
+      <div class="screen-inner">
+        <div class="left-panel">
+          <h2 class="screen-title">Choose Slot &amp; Confirm Details</h2>
+
+          <div class="slot-grid">
+            <!-- Day column -->
+            <div class="slot-column">
+              <h3>Mon</h3>
+              <button class="slot-btn" data-day="Monday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+
+            <div class="slot-column">
+              <h3>Tue</h3>
+              <button class="slot-btn" data-day="Tuesday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+
+            <div class="slot-column">
+              <h3>Wed</h3>
+              <button class="slot-btn" data-day="Wednesday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="hero-card">
+            <!-- Replace these with your own gym image if you want -->
+            <div class="hero-placeholder">
+              GYM SESSION
+            </div>
+          </div>
+
+          <div class="membership-buttons" id="membership-section">
+            <button class="pill-btn membership-btn" data-membership="Regular">REGULAR</button>
+            <button class="pill-btn membership-btn" data-membership="Student">STUDENT</button>
+            <button class="pill-btn membership-btn" data-membership="VIP">VIP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-footer">
+        <button class="primary-btn" id="step1-next">BOOK NOW</button>
+      </div>
+    </section>
+
+    <!-- STATIC ABOUT + CLASSES INFO (for nav links) -->
+    <section id="about-section" class="info-section">
+      <h2>About Us</h2>
+      <p>
+        The Gym Fitness Management System is a web-based platform that helps manage gym operations such as
+        member registration, trainer information, and workout schedules. It aims to make it easier for both
+        staff and members to keep track of fitness plans, payments, and training sessions.
+      </p>
+
+      <h3>Project Objectives</h3>
+      <ul>
+        <li>To simplify gym membership registration and record keeping.</li>
+        <li>To manage trainer information and their assigned members.</li>
+        <li>To organize workout schedules and class bookings.</li>
+        <li>To track member progress and payment status.</li>
+        <li>To improve communication between gym staff, trainers, and members.</li>
+      </ul>
+    </section>
+
+    <section id="classes-section" class="info-section">
+      <h2>Classes</h2>
+      <p>
+        Offer a mix of strength, cardio, HIIT, and functional classes. You can later expand this section with a full schedule table.
+      </p>
+    </section>
+
+    <!-- STEP 2: TRAINER SELECTION -->
+    <section id="step-2" class="screen">
+      <div class="screen-inner column">
+        <h2 class="screen-title center">Select Trainer</h2>
+
+        <div class="trainer-grid">
+          <!-- Replace src values with your own trainer images if desired -->
+          <div class="trainer-card" data-trainer="Coach Mike">
+            <div class="trainer-photo trainer1"></div>
+            <h3>Coach Mike</h3>
+            <p>Strength &amp; Conditioning</p>
+          </div>
+
+          <div class="trainer-card" data-trainer="Coach Alex">
+            <div class="trainer-photo trainer2"></div>
+            <h3>Coach Alex</h3>
+            <p>Cardio &amp; Endurance</p>
+          </div>
+
+          <div class="trainer-card" data-trainer="Coach Anna">
+            <div class="trainer-photo trainer3"></div>
+            <h3>Coach Anna</h3>
+            <p>Functional &amp; Mobility</p>
+          </div>
+        </div>
+
+        <div class="screen-footer">
+          <button class="secondary-btn" data-back="1">BACK</button>
+          <button class="primary-btn" id="step2-next">NEXT</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: STUDENT INFORMATION -->
+    <section id="step-3" class="screen">
+      <div class="screen-inner column narrow">
+        <h2 class="screen-title center">Student Information</h2>
+
+        <form id="student-form">
+          <div class="form-row">
+            <label>First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="form-row">
+            <label>Middle Name</label>
+            <input type="text" id="middleName" />
+          </div>
+          <div class="form-row">
+            <label>Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+
+          <div class="form-row">
+            <label>Birth Date</label>
+            <div class="birth-row">
+              <input type="number" id="birthMonth" placeholder="MM" min="1" max="12" required />
+              <input type="number" id="birthDay" placeholder="DD" min="1" max="31" required />
+              <input type="number" id="birthYear" placeholder="YYYY" min="1900" max="2100" required />
+            </div>
+          </div>
+
+          <p class="hint">Please make sure that you fill all the details.</p>
+
+          <div class="screen-footer">
+            <button type="button" class="secondary-btn" data-back="2">BACK</button>
+            <button type="submit" class="primary-btn">NEXT</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- STEP 4: SUMMARY + LOCAL STORAGE -->
+    <section id="step-4" class="screen">
+      <div class="screen-inner column narrow">
+        <h2 class="screen-title center">Booking Summary</h2>
+
+        <div class="summary-card">
+          <p><strong>Day:</strong> <span id="summary-day">-</span></p>
+          <p><strong>Time:</strong> <span id="summary-time">-</span></p>
+          <p><strong>Membership:</strong> <span id="summary-membership">-</span></p>
+          <p><strong>Trainer:</strong> <span id="summary-trainer">-</span></p>
+          <p><strong>Name:</strong> <span id="summary-name">-</span></p>
+          <p><strong>Birth Date:</strong> <span id="summary-birthdate">-</span></p>
+        </div>
+
+        <button class="primary-btn" id="save-booking-btn">Save Booking</button>
+
+        <h3 class="screen-subtitle">Last Saved Booking (from LocalStorage)</h3>
+        <div class="summary-card" id="last-booking-card">
+          <p>No saved booking yet.</p>
+        </div>
+
+        <div class="screen-footer">
+          <button class="secondary-btn" data-back="3">BACK</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Gym Fitness Management System &copy; 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gym Fitness Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo-area">
+      <div class="logo-circle">GF</div>
+      <div class="logo-text">
+        <span>GYM FITNESS</span>
+        <span>MANAGEMENT SYSTEM</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#about-section">ABOUT</a>
+      <a href="#classes-section">CLASSES</a>
+      <a href="#membership-section">MEMBERSHIP</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- STEP 1: SLOT + MEMBERSHIP -->
+    <section id="step-1" class="screen active">
+      <div class="screen-inner">
+        <div class="left-panel">
+          <h2 class="screen-title">Choose Slot &amp; Confirm Details</h2>
+
+          <div class="slot-grid">
+            <!-- Day column -->
+            <div class="slot-column">
+              <h3>Mon</h3>
+              <button class="slot-btn" data-day="Monday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Monday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+
+            <div class="slot-column">
+              <h3>Tue</h3>
+              <button class="slot-btn" data-day="Tuesday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Tuesday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+
+            <div class="slot-column">
+              <h3>Wed</h3>
+              <button class="slot-btn" data-day="Wednesday" data-time="12:30 PM">12:30 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="2:00 PM">2:00 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="4:00 PM">4:00 PM</button>
+              <button class="slot-btn" data-day="Wednesday" data-time="6:00 PM">6:00 PM</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="hero-card">
+            <!-- Replace these with your own gym image if you want -->
+            <div class="hero-placeholder">
+              GYM SESSION
+            </div>
+          </div>
+
+          <div class="membership-buttons" id="membership-section">
+            <button class="pill-btn membership-btn" data-membership="Regular">REGULAR</button>
+            <button class="pill-btn membership-btn" data-membership="Student">STUDENT</button>
+            <button class="pill-btn membership-btn" data-membership="VIP">VIP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-footer">
+        <button class="primary-btn" id="step1-next">BOOK NOW</button>
+      </div>
+    </section>
+
+    <!-- STATIC ABOUT + CLASSES INFO (for nav links) -->
+    <section id="about-section" class="info-section">
+      <h2>About Us</h2>
+      <p>
+        The Gym Fitness Management System is a web-based platform that helps manage gym operations such as
+        member registration, trainer information, and workout schedules. It aims to make it easier for both
+        staff and members to keep track of fitness plans, payments, and training sessions.
+      </p>
+
+      <h3>Project Objectives</h3>
+      <ul>
+        <li>To simplify gym membership registration and record keeping.</li>
+        <li>To manage trainer information and their assigned members.</li>
+        <li>To organize workout schedules and class bookings.</li>
+        <li>To track member progress and payment status.</li>
+        <li>To improve communication between gym staff, trainers, and members.</li>
+      </ul>
+    </section>
+
+    <section id="classes-section" class="info-section">
+      <h2>Classes</h2>
+      <p>
+        Offer a mix of strength, cardio, HIIT, and functional classes. You can later expand this section with a full schedule table.
+      </p>
+    </section>
+
+    <!-- STEP 2: TRAINER SELECTION -->
+    <section id="step-2" class="screen">
+      <div class="screen-inner column">
+        <h2 class="screen-title center">Select Trainer</h2>
+
+        <div class="trainer-grid">
+          <!-- Replace src values with your own trainer images if desired -->
+          <div class="trainer-card" data-trainer="Coach Mike">
+            <div class="trainer-photo trainer1"></div>
+            <h3>Coach Mike</h3>
+            <p>Strength &amp; Conditioning</p>
+          </div>
+
+          <div class="trainer-card" data-trainer="Coach Alex">
+            <div class="trainer-photo trainer2"></div>
+            <h3>Coach Alex</h3>
+            <p>Cardio &amp; Endurance</p>
+          </div>
+
+          <div class="trainer-card" data-trainer="Coach Anna">
+            <div class="trainer-photo trainer3"></div>
+            <h3>Coach Anna</h3>
+            <p>Functional &amp; Mobility</p>
+          </div>
+        </div>
+
+        <div class="screen-footer">
+          <button class="secondary-btn" data-back="1">BACK</button>
+          <button class="primary-btn" id="step2-next">NEXT</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: STUDENT INFORMATION -->
+    <section id="step-3" class="screen">
+      <div class="screen-inner column narrow">
+        <h2 class="screen-title center">Student Information</h2>
+
+        <form id="student-form">
+          <div class="form-row">
+            <label>First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="form-row">
+            <label>Middle Name</label>
+            <input type="text" id="middleName" />
+          </div>
+          <div class="form-row">
+            <label>Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+
+          <div class="form-row">
+            <label>Birth Date</label>
+            <div class="birth-row">
+              <input type="number" id="birthMonth" placeholder="MM" min="1" max="12" required />
+              <input type="number" id="birthDay" placeholder="DD" min="1" max="31" required />
+              <input type="number" id="birthYear" placeholder="YYYY" min="1900" max="2100" required />
+            </div>
+          </div>
+
+          <p class="hint">Please make sure that you fill all the details.</p>
+
+          <div class="screen-footer">
+            <button type="button" class="secondary-btn" data-back="2">BACK</button>
+            <button type="submit" class="primary-btn">NEXT</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- STEP 4: SUMMARY + LOCAL STORAGE -->
+    <section id="step-4" class="screen">
+      <div class="screen-inner column narrow">
+        <h2 class="screen-title center">Booking Summary</h2>
+
+        <div class="summary-card">
+          <p><strong>Day:</strong> <span id="summary-day">-</span></p>
+          <p><strong>Time:</strong> <span id="summary-time">-</span></p>
+          <p><strong>Membership:</strong> <span id="summary-membership">-</span></p>
+          <p><strong>Trainer:</strong> <span id="summary-trainer">-</span></p>
+          <p><strong>Name:</strong> <span id="summary-name">-</span></p>
+          <p><strong>Birth Date:</strong> <span id="summary-birthdate">-</span></p>
+        </div>
+
+        <button class="primary-btn" id="save-booking-btn">Save Booking</button>
+
+        <h3 class="screen-subtitle">Last Saved Booking (from LocalStorage)</h3>
+        <div class="summary-card" id="last-booking-card">
+          <p>No saved booking yet.</p>
+        </div>
+
+        <div class="screen-footer">
+          <button class="secondary-btn" data-back="3">BACK</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Gym Fitness Management System &copy; 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
